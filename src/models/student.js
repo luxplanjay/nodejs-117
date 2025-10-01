@@ -15,7 +15,7 @@ const studentSchema = new Schema(
       required: true,
       enum: ["male", "female", "other"],
     },
-    avhMark: {
+    avgMark: {
       type: Number,
       required: true,
     },

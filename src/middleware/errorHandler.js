@@ -1,15 +1,18 @@
 import { HttpError } from "http-errors";
 
 export const errorHandler = (err, req, res, next) => {
+  console.log("Error Middleware:", err.message);
+
   if (err instanceof HttpError) {
     res.status(err.status).json({
-      error: err.message || err.name,
+      message: err.message || err.name,
     });
     return;
   }
 
-  console.log("Error Middleware:", err.message);
+  const isProd = process.env.NODE_ENV === "production";
+
   res.status(500).json({
-    error: err.message,
+    message: isProd ? "Something went wrong!" : err.message,
   });
 };
