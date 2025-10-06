@@ -21,7 +21,6 @@ const studentSchema = new Schema(
     },
     onDuty: {
       type: Boolean,
-      required: false,
       default: false,
     },
   },
