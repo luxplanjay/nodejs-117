@@ -1,10 +1,15 @@
 import { Schema, model } from "mongoose";
 
+// "Jacob"
+// "  Jacob"
+// "   Jacob   "
+
 const studentSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
+      trim: true,
     },
     age: {
       type: Number,
