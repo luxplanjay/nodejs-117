@@ -1,6 +1,7 @@
-# Заняття 4 - CRUD
+# Заняття 5 - Валідація
 
-- Тіло запиту
-- POST
-- DELETE
-- PATCH
+- Валідація на бекенді: body, params, query, headers, cookies
+- Celebrate та Joi
+- Схеми валідації
+- Middlware валідації
+- Валідація ідентифікатора MongoDB
