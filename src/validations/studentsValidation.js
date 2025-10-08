@@ -1,6 +1,19 @@
 import { Joi, Segments } from "celebrate";
 import { isValidObjectId } from "mongoose";
 
+//GET localhost:3000/students?page=1&perPage=5&minMark=3&gender=female&available=false&search=qwe
+
+export const getStudentsSchema = {
+  [Segments.QUERY]: {
+    page: Joi.number().integer().min(1).default(1),
+    perPage: Joi.number().integer().min(5).max(15).default(10),
+    minMark: Joi.number().positive(),
+    gender: Joi.string().valid("male", "female", "other"),
+    available: Joi.boolean(),
+    search: Joi.string().trim().allow(""),
+  },
+};
+
 export const createStudentBodySchema = {
   [Segments.BODY]: Joi.object({
     name: Joi.string().min(2).max(20).required(),

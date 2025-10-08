@@ -9,13 +9,14 @@ import {
 } from "../controllers/studentsController.js";
 import {
   createStudentBodySchema,
+  getStudentsSchema,
   studentIdParam,
   updateStudentSchema,
 } from "../validations/studentsValidation.js";
 
 const router = Router();
 
-router.get("/students", getStudents);
+router.get("/students", celebrate(getStudentsSchema), getStudents);
 router.get("/students/:studentId", celebrate(studentIdParam), getStudentById);
 router.post("/students", celebrate(createStudentBodySchema), createStudent);
 router.delete("/students/:studentId", celebrate(studentIdParam), deleteStudent);

@@ -1,9 +1,5 @@
 import { Schema, model } from "mongoose";
 
-// "Jacob"
-// "  Jacob"
-// "   Jacob   "
-
 const studentSchema = new Schema(
   {
     name: {
@@ -34,5 +30,7 @@ const studentSchema = new Schema(
     versionKey: false,
   }
 );
+
+studentSchema.index({ name: "text" });
 
 export const Student = model("Student", studentSchema);
