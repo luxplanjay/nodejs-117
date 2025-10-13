@@ -21,12 +21,6 @@ export const getStudents = async (req, res) => {
     });
   }
 
-  // if (search) {
-  //   studentsQuery.where({
-  //     name: { $regex: search, $options: "i" },
-  //   });
-  // }
-
   if (minMark) {
     studentsQuery.where("avgMark").gte(minMark);
   }
