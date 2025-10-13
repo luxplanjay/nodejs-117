@@ -10,6 +10,7 @@ export const getStudents = async (req, res) => {
     available,
     search,
   } = req.query;
+
   const skip = (page - 1) * perPage;
 
   const studentsQuery = Student.find();
