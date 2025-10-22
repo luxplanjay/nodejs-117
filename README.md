@@ -1,8 +1,6 @@
-# Заняття 9 - Пошта
+# Заняття 10 - Зображення
 
-- Електронна пошта
-- Протоколи SMTP (Simple Mail Transfer Protocol) та POP3 (Post Office Protocol v3)
-- Скидання паролю
-  - POST /auth/request-reset-email
-  - POST /auth/reset-password
-  - JWT
+- Тип multipart/form-data
+- multer
+- Аватар користувача
+- Cloudinary

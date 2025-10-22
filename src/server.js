@@ -10,6 +10,7 @@ import { errorHandler } from "./middleware/errorHandler.js";
 import { logger } from "./middleware/logger.js";
 import studentsRoutes from "./routes/studentsRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT ?? 3000;
@@ -22,6 +23,7 @@ app.use(logger);
 
 app.use(authRoutes);
 app.use(studentsRoutes);
+app.use(userRoutes);
 
 app.use(notFoundHandler);
 app.use(errors());
